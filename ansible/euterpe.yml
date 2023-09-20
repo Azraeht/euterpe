@@ -1,0 +1,46 @@
+---
+- hosts: default
+  name: Configure Rasbperry
+  tasks:
+    - name: Deploy raspotify
+      block:
+        - name: Add raspotify apt-key
+          ansible.builtin.get_url:
+            url: https://dtcooper.github.io/raspotify/key.asc
+            dest: /usr/share/keyrings/raspotify-archive-keyrings.asc
+            checksum: sha256:36dd5aadd073950d55c404f0e0c6c2e0555259bf38bd8b6448c35591a3cc9cfd
+          become: true
+
+        - name: Add raspotify repository
+          ansible.builtin.apt_repository:
+            repo: "deb [signed-by=/usr/share/keyrings/raspotify-archive-keyrings.asc] https://dtcooper.github.io/raspotify raspotify main"
+            state: present
+          become: true
+
+        - name: Install raspotify
+          ansible.builtin.apt:
+            name: raspotify
+            state: present
+          become: true
+
+        - name: Configure raspotify
+          lineinfile:
+            dest: /etc/raspotify/conf
+            regexp: '^#LIBRESPOT_NAME.*$'
+            line: 'LIBRESPOT_NAME=Euterpe'
+          become: true
+          notify:
+            - Restart raspotify
+
+        - name: Ensure raspotify is started
+          ansible.builtin.systemd:
+            state: started
+            name: raspotify
+          become: true
+
+  handlers:
+    - name: Restart raspotify
+      ansible.builtin.systemd:
+        state: restarted
+        name: raspotify
+      become: true
