@@ -25,3 +25,14 @@ You must:
 > cd ansible
 > ansible-playbook -i inventory/realm euterpe.yml --diff
 ```
+
+# Run it!
+
+* Start the API
+```
+> uvicorn euterpe.api:app --reload
+```
+* Run the server
+```
+> python euterpe/cli.py server run
+```
