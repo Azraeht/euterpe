@@ -1,6 +1,14 @@
 # Euterpe API
 
-* Get spotify `CLIENT_ID` and `CLIENT_SECRET` from https://developer.spotify.com/
+Euterpe is a random and useless but fun project which goals it to provide a simple NFC reader which trigger Spotify songs.
+
+
+# Setup
+
+## Spotify
+
+* Create an `Euterpe` app on [Spotify](https://developer.spotify.com/)
+* Get spotify `CLIENT_ID` and `CLIENT_SECRET`
 
 ## Configure Raspberry
 
