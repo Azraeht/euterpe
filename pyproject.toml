@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "euterpe"
+version = "0.1.0"
+description = ""
+authors = ["Brice Santus <brice.santus@proton.me>"]
+readme = "README.md"
+packages = [{include = "api"}, {include = "server"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+uvicorn = "^0.23.2"
+fastapi = "^0.103.1"
+sqlalchemy = "^2.0.20"
+typer = {version = "^0.9.0", extras = ["all"]}
+spotipy = "^2.23.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+pdbpp = "^0.10.3"
+isort = "^5.12.0"
+pylint = "^2.17.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
