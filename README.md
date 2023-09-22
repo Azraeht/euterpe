@@ -1,6 +1,6 @@
 # Euterpe API
 
-Euterpe is a random and useless but fun project which goals it to provide a simple NFC reader which trigger Spotify songs.
+Euterpe is a random and useless but fun project which aims to provide a simple NFC reader  triggering Spotify songs.
 
 
 # Setup
@@ -16,8 +16,13 @@ Euterpe is a random and useless but fun project which goals it to provide a simp
 
 You must:
 - Have a Raspberry Pi setup and configured to be accessible through ssh under `raspberry` with a sudoer user
+- A RC522 card connected on the Raspberry
 - Ensure it's connected to a speaker
 
+### RC522 setup
+
+Here is a wiring plan of the RC522 card on your Raspberry
+![Alt text](.assets/Raspberry-wiring-RC522.png)
 ### Install Raspotify
 
 * Installation
