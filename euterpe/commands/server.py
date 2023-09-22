@@ -2,6 +2,8 @@ import typer
 import requests
 from rich import print
 
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
 
@@ -18,7 +20,7 @@ def get_account():
 
 
 @app.command()
-def run():
+def play():
     print("[blue]Starting server...[/blue]")
     account = get_account()
     scope = "user-read-playback-state,user-modify-playback-state"
@@ -37,6 +39,18 @@ def run():
     print(f"[blue]Currently playing:[/blue] {track['name']} by {track['artists'][0]['name']}")
     # Change track
     sp.start_playback(uris=[test_uri], device_id=device["id"])
+
+
+@app.command()
+def read():
+    reader = SimpleMFRC522()
+
+    try:
+        id, text = reader.read()
+        print(id)
+        print(text)
+    finally:
+        GPIO.cleanup()
 
 
 if __name__ == "__main__":
