@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Brice Santus <brice.santus@proton.me>"]
 readme = "README.md"
-packages = [{include = "api"}, {include = "server"}]
+packages = [{include = "euterpe"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -13,6 +13,8 @@ fastapi = "^0.103.1"
 sqlalchemy = "^2.0.20"
 typer = {version = "^0.9.0", extras = ["all"]}
 spotipy = "^2.23.0"
+spidev = "^3.6"
+mfrc522 = "^0.0.7"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,6 +22,33 @@ black = "^23.9.1"
 pdbpp = "^0.10.3"
 isort = "^5.12.0"
 pylint = "^2.17.5"
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
+]
+
+branch = "main"
+upload_to_PyPI = false
+upload_to_release = true
+build_command = "echo 'Building...'"
+commit_author = "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "style",
+    "refactor",
+    "test"
+]
+minor_tags = ["feat"]
+patch_tags = ["fix", "perf"]
 
 [build-system]
 requires = ["poetry-core"]
