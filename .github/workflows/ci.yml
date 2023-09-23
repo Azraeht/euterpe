@@ -48,6 +48,10 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
     needs: lint
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
@@ -63,8 +67,6 @@ jobs:
           virtualenvs-in-project: false
           installer-parallel: true
       - name: Semantic Release
-        run: |
-          pip install python-semantic-release
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          semantic-release publish
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
