@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "euterpe"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Brice Santus <brice.santus@proton.me>"]
 readme = "README.md"

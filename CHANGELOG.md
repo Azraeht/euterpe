@@ -2,6 +2,17 @@
 
 
 
+## v0.1.1 (2023-09-23)
+
+### Ci
+
+* ci: run semantic-release through poetry ([`e98c2e6`](https://github.com/Azraeht/euterpe/commit/e98c2e61e4532506c7b74e15d22d61c0c96dfe4e))
+
+### Fix
+
+* fix: fix semantic-release configuration and ci ([`bc11b52`](https://github.com/Azraeht/euterpe/commit/bc11b5271830ae0f8ca1c90523cd8af822d34a30))
+
+
 ## v0.1.0 (2023-09-23)
 
 ### Build
