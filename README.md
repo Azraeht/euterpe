@@ -1,5 +1,7 @@
 # Euterpe API
 
+[![CI](https://github.com/Azraeht/euterpe/actions/workflows/ci.yml/badge.svg)](https://github.com/Azraeht/euterpe/actions/workflows/ci.yml)
+
 Euterpe is a random and useless but fun project which aims to provide a simple NFC reader  triggering Spotify songs.
 
 
