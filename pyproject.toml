@@ -46,12 +46,14 @@ profile = "black"
 [tool.semantic_release]
 version_variable = [
     "euterpe/__init__.py:__version__",
-    "pyproject.toml:version"
+]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
 ]
 branch = "main"
 upload_to_pypi = false
 upload_to_release = true
-build_command = "poetry build"
+build_command = "echo 'Building...'"
 
 [build-system]
 requires = ["poetry-core"]
