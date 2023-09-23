@@ -38,6 +38,17 @@
             name: raspotify
           become: true
 
+    - name: Setup Euterpe
+      block:
+        - name: Ensure folder exists
+          ansible.builtin.file:
+            path: /opt/euterpe
+            state: directory
+            mode: '0755'
+          become: true
+
+        - name: Install
+
   handlers:
     - name: Restart raspotify
       ansible.builtin.systemd:
