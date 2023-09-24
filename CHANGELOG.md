@@ -2,6 +2,23 @@
 
 
 
+## v0.2.0 (2023-09-24)
+
+### Ci
+
+* ci: setup publication on pypi ([`11fafe4`](https://github.com/Azraeht/euterpe/commit/11fafe48471eadb9326dbf45dd4d40c4dab3cf6d))
+
+* ci: run semantic-release through poetry ([`6a95482`](https://github.com/Azraeht/euterpe/commit/6a954824418a3c7fba922132c1290a7c7b330129))
+
+### Feature
+
+* feat: adding server run first command ([`64ea2f7`](https://github.com/Azraeht/euterpe/commit/64ea2f73b154c647f90e66758cd594ed96a7d670))
+
+### Fix
+
+* fix: fix semantic-release configuration and ci ([`bc11b52`](https://github.com/Azraeht/euterpe/commit/bc11b5271830ae0f8ca1c90523cd8af822d34a30))
+
+
 ## v0.1.0 (2023-09-23)
 
 ### Build
