@@ -53,7 +53,7 @@ version_source = "tag"
 commit_message = "{version} [skip ci]" # skip triggering ci pipelines for version commits
 branch = "main"
 upload_to_pypi = true
-upload_to_release = false
+upload_to_release = true
 build_command = "poetry build"
 hvcs = "github"
 
