@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run API",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "euterpe.api:app",
+                "--reload"
+            ],
+            "jinja": true,
+            "justMyCode": true
+        },
+        {
+            "name": "Run Server",
+            "type": "python",
+            "request": "launch",
+            "args": ["run"],
+            "program": "${workspaceFolder}/euterpe/cli.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+              "PYTHONPATH": "${workspaceFolder}"
+            },
+            "stopOnEntry": false
+        },
+
+    ]
+}
