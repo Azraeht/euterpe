@@ -1,6 +1,5 @@
 sql_app.db
 __pycache__
 .cache
-.vscode
 .envrc_local
 dist/
