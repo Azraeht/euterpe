@@ -22,6 +22,9 @@ black = "^23.9.1"
 pdbpp = "^0.10.3"
 isort = "^5.12.0"
 pylint = "^2.17.5"
+
+
+[tool.poetry.group.semver.dependencies]
 python-semantic-release = "^8.1.1"
 
 [tool.black]
@@ -44,16 +47,15 @@ line_length = 120
 profile = "black"
 
 [tool.semantic_release]
-version_variables = [
-    "euterpe/__init__.py:__version__",
-]
-version_toml = [
-    "pyproject.toml:tool.poetry.version"
-]
+version_variable = "euterpe/__init__.py:__version__"
+version_toml = ["pyproject.toml:tool.poetry.version"]
+version_source = "tag"
+commit_message = "{version} [skip ci]" # skip triggering ci pipelines for version commits
 branch = "main"
-upload_to_pypi = false
-upload_to_release = true
+upload_to_pypi = true
+upload_to_release = false
 build_command = "poetry build"
+hvcs = "github"
 
 [build-system]
 requires = ["poetry-core"]

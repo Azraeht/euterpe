@@ -84,7 +84,7 @@ jobs:
         run: poetry install --no-interaction --no-root
 
       - name: Install project
-        run: poetry install --no-interaction
+        run: poetry install --no-interaction --only semver
 
       - name: Python Semantic Release
         uses: python-semantic-release/python-semantic-release@master
